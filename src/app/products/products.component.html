@@ -1,3 +1,38 @@
+<h3>Add Products</h3>
+<div>
+    <form [formGroup] = "productForm" (ngSubmit)='addProductToDB()'>
+        <p>Product ID:</p>
+        <input type="text" id="productId" placeholder="eg: 101" formControlName="pid">
+        <br>
+
+        <p>Product Name:</p>
+        <input type="text" id="productName" placeholder="eg: 101" formControlName="name">
+        <br>
+
+        <p>Product Price:</p>
+        <input type="text" id="productPrice" placeholder="eg: 101" formControlName="price">
+        <br>
+
+        <p>Product Ratings:</p>
+        <input type="text" id="productRatings" placeholder="eg: 101" formControlName="ratings">
+        <br>
+
+        <select formControlName="category">
+            <option *ngFor="let category of categories">
+                {{category.title}}
+            </option>
+        </select>
+        <br>
+
+        <button type="submit">ADD PRODUCT</button>
+
+    </form>
+</div>
+
+<h3>FORM DATA</h3>
+<p>{{this.productForm.value | json}}</p>
+
+
 <h3>List of All Products</h3>
 <div *ngIf="showProducts">
     <p *ngFor="let product of products">
