@@ -1,0 +1,6 @@
+<h3>List of All Products</h3>
+<div *ngIf="showProducts">
+    <p *ngFor="let product of products">
+        {{product.pid}} | {{product.name}} | {{product.price}} | {{product.ratings}}
+    </p>
+</div>
